@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glossar Einträge HTML</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Glossar HTML</div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Suchen...">
+            </div>
+            <ul>
+                   <li><a href="index.html" class="active">Einträge</a></li>
+                 <li><a href="editor.html">Editor</a></li>
+                <li><a href="https://kupferdraht.github.io/Glossar-CSS/">CSS</a></li>
+                <li><a href="https://kupferdraht.github.io/Glossar-JAVASCRIPT/">JAVASCRIPT</a></li>
+                 <li><a href="https://kupferdraht.github.io/Glossar/">HOME</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="entries-container">
+            <h1>Glossar Einträge HTML</h1>
+            <div class="entries-actions">
+                <button onclick="exportEntries()" class="backup-button">Backup erstellen</button>
+                <button onclick="showTableOfContents()" class="toc-button">Inhaltsverzeichnis</button>
+                <input type="file" id="importFile" accept=".json" style="display: none" onchange="importEntries(event)">
+
+                <button onclick="document.getElementById('importFile').click()" class="backup-button">Backup importieren</button>
+            </div>
+            <div id="entries-list"></div>
+        </div>
+    </main>
+
+    <!-- Draggable Table of Contents -->
+    <div id="tocWindow" class="toc-window">
+        <div class="toc-header">
+            <span>Inhaltsverzeichnis</span>
+            <button class="close-button" onclick="hideTocWindow()">×</button>
+        </div>
+        <div id="tocContent" class="toc-content"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
